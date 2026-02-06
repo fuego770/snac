@@ -1,0 +1,13 @@
+[Unit]
+Description=Sophos Autoconnect Binary
+After=network.target
+
+[Service]
+# load the config from teh environment path
+EnvironmentFile=%h/.config/snac/snac.config
+ExecStart=${BINARY_PATH}
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target
