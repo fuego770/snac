@@ -1,0 +1,8 @@
+[package]
+name = "snac_dispatcher"
+version = "0.3.0"
+edition = "2024"
+
+[dependencies]
+rustix = { version = "0.38", features = ["fs"] }
+

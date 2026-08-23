@@ -1,0 +1,15 @@
+[Unit]
+Description=Sophos Network Auto Connect (SNAC)
+After=network.target
+
+[Service]
+Type=simple
+EnvironmentFile=%h/.config/snac/snac.config
+ExecStart=/usr/bin/stdbuf -oL -eL ${BINARY_PATH}
+Restart=always
+RestartSec=3
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
